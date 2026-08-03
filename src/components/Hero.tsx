@@ -35,17 +35,17 @@ export function Hero() {
       <div className="absolute top-1/3 -right-32 h-[26rem] w-[26rem] rounded-full bg-accent-2/18 blur-[110px] animate-float-slow" />
       <div className="absolute bottom-0 left-1/3 h-[22rem] w-[22rem] rounded-full bg-accent-3/14 blur-[100px] animate-float" />
 
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-5 sm:gap-12 md:grid-cols-[1.2fr_0.8fr] md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 lg:px-8">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-5 sm:gap-12 md:grid md:grid-cols-[1.2fr_0.8fr] md:items-start md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 lg:px-8">
         {/* Text content */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="show"
-          className="flex flex-col items-start gap-5 sm:gap-6"
+          className="flex w-full flex-col items-center gap-5 sm:gap-6 md:items-start"
         >
           <motion.div
             variants={fadeUp}
-            className="inline-flex items-center gap-2.5 rounded-full border border-line bg-card px-4 py-2 text-sm font-medium text-muted shadow-sm"
+            className="inline-flex items-center gap-2.5 rounded-full border border-line bg-card px-5 py-2 text-sm font-medium text-muted shadow-sm sm:px-4"
           >
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -56,40 +56,43 @@ export function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="font-display text-lg font-medium text-muted"
+            className="font-display text-center text-lg font-medium text-muted"
           >
             {t.hero.greeting}
           </motion.p>
 
           <motion.h1
             variants={fadeUp}
-            className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+            className="font-display text-center text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
           >
             <span className="text-gradient">{t.hero.name}</span>
           </motion.h1>
 
           <motion.h2
             variants={fadeUp}
-            className="font-display text-xl font-semibold text-muted sm:text-3xl lg:text-4xl"
+            className="font-display text-center text-xl font-semibold text-muted sm:text-3xl lg:text-4xl"
           >
             {t.hero.role}
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="max-w-lg text-base leading-relaxed text-muted sm:text-lg"
+            className="max-w-xs text-center text-base leading-relaxed text-muted sm:max-w-lg sm:text-lg"
           >
             {t.hero.tagline}
           </motion.p>
 
           <motion.p
             variants={fadeUp}
-            className="max-w-xl text-sm leading-relaxed text-muted sm:text-base"
+            className="max-w-sm text-center text-sm leading-relaxed text-muted sm:max-w-xl sm:text-base"
           >
             {t.hero.description}
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-wrap items-center justify-center gap-4"
+          >
             <a
               href="#projects"
               className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition-all hover:opacity-85"
@@ -135,14 +138,45 @@ export function Hero() {
               <MailIcon className="h-5 w-5" />
             </a>
           </motion.div>
+
+          {/* Stats - in flow on mobile, hidden on desktop (shown absolute below) */}
+          <motion.div
+            variants={fadeUp}
+            className="flex items-center justify-center gap-10 md:hidden"
+          >
+            <div>
+              <p className="font-display text-2xl font-bold text-gradient sm:text-3xl">
+                <CountUp to={2} suffix="+" duration={2} />
+              </p>
+              <p className="text-xs text-muted sm:text-sm">
+                {t.hero.quickStats}
+              </p>
+            </div>
+            <div>
+              <p className="font-display text-2xl font-bold text-gradient sm:text-3xl">
+                <CountUp to={4} suffix="+" duration={2} delay={0.2} />
+              </p>
+              <p className="text-xs text-muted sm:text-sm">
+                {t.hero.projectsBuilt}
+              </p>
+            </div>
+            <div>
+              <p className="font-display text-2xl font-bold text-gradient sm:text-3xl">
+                <CountUp to={3} duration={2} delay={0.4} />
+              </p>
+              <p className="text-xs text-muted sm:text-sm">
+                {t.hero.languages}
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
 
-        {/* Visual / Avatar */}
+        {/* Visual / Avatar - appears after text on mobile, right column on desktop */}
         <motion.div
           variants={fadeRight}
           initial="hidden"
           animate="show"
-          className="relative mx-auto w-full max-w-[14rem] sm:max-w-[16rem] md:max-w-xs lg:max-w-sm"
+          className="relative w-full max-w-[14rem] sm:max-w-[16rem] md:max-w-xs lg:max-w-sm"
         >
           <div className="relative aspect-square">
             {/* Rotating gradient ring */}
@@ -167,23 +201,23 @@ export function Hero() {
               />
             </div>
 
-            {/* Floating badges - hidden on mobile, shown on tablet+ */}
+            {/* Floating badges - shown on all screens */}
             <motion.div
-              className="absolute -top-2 left-0 hidden sm:flex sm:items-center sm:gap-2 sm:rounded-2xl sm:border sm:border-line sm:bg-card sm:px-4 sm:py-3"
+              className="absolute -top-2 left-0 flex items-center gap-1.5 rounded-xl border border-line bg-card px-2.5 py-2 shadow-lg sm:-top-2 sm:-left-6 sm:gap-2 sm:rounded-2xl sm:px-4 sm:py-3"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-violet-500/15 text-violet-500">
-                <BoltIcon className="h-4 w-4" />
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-violet-500/15 text-violet-500 sm:h-9 sm:w-9 sm:rounded-xl">
+                <BoltIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               </span>
               <div className="text-left">
-                <p className="text-sm font-semibold">GSAP</p>
-                <p className="text-xs text-muted">Animations</p>
+                <p className="text-xs font-semibold sm:text-sm">GSAP</p>
+                <p className="hidden text-xs text-muted sm:block">Animations</p>
               </div>
             </motion.div>
 
             <motion.div
-              className="absolute -right-4 top-1/4 hidden sm:flex sm:items-center sm:gap-2 sm:rounded-2xl sm:border sm:border-line sm:bg-card sm:px-4 sm:py-3"
+              className="absolute -right-2 top-1/4 flex items-center gap-1.5 rounded-xl border border-line bg-card px-2.5 py-2 shadow-lg sm:-right-4 sm:gap-2 sm:rounded-2xl sm:px-4 sm:py-3"
               animate={{ y: [0, 12, 0] }}
               transition={{
                 duration: 6,
@@ -192,17 +226,17 @@ export function Hero() {
                 delay: 0.6,
               }}
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-500">
-                <CodeIcon className="h-4 w-4" />
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-500 sm:h-9 sm:w-9 sm:rounded-xl">
+                <CodeIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               </span>
               <div>
-                <p className="text-sm font-semibold">React.js</p>
-                <p className="text-xs text-muted">Three.js</p>
+                <p className="text-xs font-semibold sm:text-sm">React.js</p>
+                <p className="hidden text-xs text-muted sm:block">Three.js</p>
               </div>
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-3 -left-4 hidden sm:flex sm:items-center sm:gap-2 sm:rounded-2xl sm:border sm:border-line sm:bg-card sm:px-4 sm:py-3"
+              className="absolute -bottom-1 -left-2 flex items-center gap-1.5 rounded-xl border border-line bg-card px-2.5 py-2 shadow-lg sm:-bottom-3 sm:-left-4 sm:gap-2 sm:rounded-2xl sm:px-4 sm:py-3"
               animate={{ y: [0, -8, 0] }}
               transition={{
                 duration: 4.5,
@@ -211,49 +245,49 @@ export function Hero() {
                 delay: 1.2,
               }}
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-fuchsia-500/15 text-fuchsia-500">
-                <SparkleIcon className="h-4 w-4" />
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-fuchsia-500/15 text-fuchsia-500 sm:h-9 sm:w-9 sm:rounded-xl">
+                <SparkleIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               </span>
               <div>
-                <p className="text-sm font-semibold">Framer Motion</p>
-                <p className="text-xs text-muted">Tailwind CSS</p>
+                <p className="text-xs font-semibold sm:text-sm">Framer Motion</p>
+                <p className="hidden text-xs text-muted sm:block">Tailwind CSS</p>
               </div>
             </motion.div>
           </div>
         </motion.div>
       </div>
 
-      {/* Stats bar - responsive */}
+      {/* Stats bar - absolute on desktop only */}
       <motion.div
         variants={fadeLeft}
         initial="hidden"
         animate="show"
-        className="relative mt-10 flex flex-col items-center gap-5 px-5 sm:absolute sm:inset-x-0 sm:bottom-8 sm:mx-auto sm:mt-0 sm:flex-row sm:w-full sm:max-w-6xl sm:items-end sm:justify-between sm:gap-10 lg:px-8"
+        className="absolute inset-x-0 bottom-8 hidden w-full max-w-6xl items-end justify-between gap-10 px-5 md:flex lg:px-8"
       >
-        <div className="flex items-center gap-6 sm:gap-10">
+        <div className="flex items-center gap-10">
           <div>
-            <p className="font-display text-2xl font-bold text-gradient sm:text-3xl">
+            <p className="font-display text-3xl font-bold text-gradient">
               <CountUp to={2} suffix="+" duration={2} />
             </p>
-            <p className="text-xs text-muted sm:text-sm">{t.hero.quickStats}</p>
+            <p className="text-sm text-muted">{t.hero.quickStats}</p>
           </div>
           <div>
-            <p className="font-display text-2xl font-bold text-gradient sm:text-3xl">
+            <p className="font-display text-3xl font-bold text-gradient">
               <CountUp to={4} suffix="+" duration={2} delay={0.2} />
             </p>
-            <p className="text-xs text-muted sm:text-sm">{t.hero.projectsBuilt}</p>
+            <p className="text-sm text-muted">{t.hero.projectsBuilt}</p>
           </div>
           <div>
-            <p className="font-display text-2xl font-bold text-gradient sm:text-3xl">
+            <p className="font-display text-3xl font-bold text-gradient">
               <CountUp to={3} duration={2} delay={0.4} />
             </p>
-            <p className="text-xs text-muted sm:text-sm">{t.hero.languages}</p>
+            <p className="text-sm text-muted">{t.hero.languages}</p>
           </div>
         </div>
 
         <a
           href="#about"
-          className="group hidden flex-col items-center gap-2 text-sm text-muted transition-colors hover:text-foreground sm:flex"
+          className="group flex flex-col items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
         >
           {t.hero.scroll}
           <motion.span
