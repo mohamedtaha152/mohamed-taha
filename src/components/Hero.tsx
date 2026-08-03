@@ -167,23 +167,23 @@ export function Hero() {
               />
             </div>
 
-            {/* Floating badges */}
+            {/* Floating badges - hidden on mobile, shown on tablet+ */}
             <motion.div
-              className="absolute -top-1 left-0 flex items-center gap-1.5 rounded-xl border border-line bg-card px-2.5 py-2 shadow-lg sm:-top-2 sm:-left-6 sm:gap-2 sm:rounded-2xl sm:px-4 sm:py-3"
+              className="absolute -top-2 left-0 hidden sm:flex sm:items-center sm:gap-2 sm:rounded-2xl sm:border sm:border-line sm:bg-card sm:px-4 sm:py-3"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             >
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-violet-500/15 text-violet-500 sm:h-9 sm:w-9 sm:rounded-xl">
-                <BoltIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-violet-500/15 text-violet-500">
+                <BoltIcon className="h-4 w-4" />
               </span>
               <div className="text-left">
-                <p className="text-xs font-semibold sm:text-sm">GSAP</p>
-                <p className="hidden text-xs text-muted sm:block">Animations</p>
+                <p className="text-sm font-semibold">GSAP</p>
+                <p className="text-xs text-muted">Animations</p>
               </div>
             </motion.div>
 
             <motion.div
-              className="absolute -right-2 top-1/4 flex items-center gap-1.5 rounded-xl border border-line bg-card px-2.5 py-2 shadow-lg sm:-right-4 sm:gap-2 sm:rounded-2xl sm:px-4 sm:py-3"
+              className="absolute -right-4 top-1/4 hidden sm:flex sm:items-center sm:gap-2 sm:rounded-2xl sm:border sm:border-line sm:bg-card sm:px-4 sm:py-3"
               animate={{ y: [0, 12, 0] }}
               transition={{
                 duration: 6,
@@ -192,17 +192,17 @@ export function Hero() {
                 delay: 0.6,
               }}
             >
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-500 sm:h-9 sm:w-9 sm:rounded-xl">
-                <CodeIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-500">
+                <CodeIcon className="h-4 w-4" />
               </span>
               <div>
-                <p className="text-xs font-semibold sm:text-sm">React.js</p>
-                <p className="hidden text-xs text-muted sm:block">Three.js</p>
+                <p className="text-sm font-semibold">React.js</p>
+                <p className="text-xs text-muted">Three.js</p>
               </div>
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-1 -left-2 flex items-center gap-1.5 rounded-xl border border-line bg-card px-2.5 py-2 shadow-lg sm:-bottom-3 sm:-left-4 sm:gap-2 sm:rounded-2xl sm:px-4 sm:py-3"
+              className="absolute -bottom-3 -left-4 hidden sm:flex sm:items-center sm:gap-2 sm:rounded-2xl sm:border sm:border-line sm:bg-card sm:px-4 sm:py-3"
               animate={{ y: [0, -8, 0] }}
               transition={{
                 duration: 4.5,
@@ -211,12 +211,12 @@ export function Hero() {
                 delay: 1.2,
               }}
             >
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-fuchsia-500/15 text-fuchsia-500 sm:h-9 sm:w-9 sm:rounded-xl">
-                <SparkleIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-fuchsia-500/15 text-fuchsia-500">
+                <SparkleIcon className="h-4 w-4" />
               </span>
               <div>
-                <p className="text-xs font-semibold sm:text-sm">Framer Motion</p>
-                <p className="hidden text-xs text-muted sm:block">Tailwind CSS</p>
+                <p className="text-sm font-semibold">Framer Motion</p>
+                <p className="text-xs text-muted">Tailwind CSS</p>
               </div>
             </motion.div>
           </div>
@@ -228,7 +228,7 @@ export function Hero() {
         variants={fadeLeft}
         initial="hidden"
         animate="show"
-        className="relative mt-10 flex flex-wrap items-center justify-center gap-6 px-5 sm:absolute sm:inset-x-0 sm:bottom-8 sm:mx-auto sm:mt-0 sm:flex sm:w-full sm:max-w-6xl sm:items-end sm:justify-between sm:gap-10 lg:px-8"
+        className="relative mt-10 flex flex-col items-center gap-5 px-5 sm:absolute sm:inset-x-0 sm:bottom-8 sm:mx-auto sm:mt-0 sm:flex-row sm:w-full sm:max-w-6xl sm:items-end sm:justify-between sm:gap-10 lg:px-8"
       >
         <div className="flex items-center gap-6 sm:gap-10">
           <div>
