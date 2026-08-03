@@ -262,7 +262,7 @@ export function Hero() {
         variants={fadeLeft}
         initial="hidden"
         animate="show"
-        className="absolute inset-x-0 bottom-8 hidden w-full max-w-6xl items-end justify-between gap-10 px-5 md:flex lg:px-8"
+        className="absolute inset-x-0 bottom-8 hidden w-full max-w-6xl items-end justify-between gap-10 px-5 md:mx-auto md:flex lg:px-8"
       >
         <div className="flex items-center gap-10">
           <div>
@@ -312,7 +312,6 @@ export function Hero() {
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-line bg-card text-muted"
         >
-          
           <ArrowDownIcon className="h-4 w-4" />
         </motion.span>
       </motion.div>
