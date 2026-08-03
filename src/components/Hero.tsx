@@ -31,9 +31,9 @@ export function Hero() {
     >
       {/* Background decor */}
       <div className="absolute inset-0 bg-grid mask-fade-bottom" />
-      <div className="absolute -top-32 -left-32 h-[30rem] w-[30rem] rounded-full bg-accent/20 blur-[120px] animate-float" />
-      <div className="absolute top-1/3 -right-32 h-[26rem] w-[26rem] rounded-full bg-accent-2/18 blur-[110px] animate-float-slow" />
-      <div className="absolute bottom-0 left-1/3 h-[22rem] w-[22rem] rounded-full bg-accent-3/14 blur-[100px] animate-float" />
+      <div className="absolute -top-20 -left-20 h-[20rem] w-[20rem] rounded-full bg-accent/20 blur-[100px] animate-float sm:h-[30rem] sm:w-[30rem] sm:blur-[120px] sm:-top-32 sm:-left-32" />
+      <div className="absolute top-1/3 -right-20 h-[20rem] w-[20rem] rounded-full bg-accent-2/18 blur-[90px] animate-float-slow sm:h-[26rem] sm:w-[26rem] sm:blur-[110px] sm:-right-32" />
+      <div className="absolute bottom-0 left-1/3 h-[18rem] w-[18rem] rounded-full bg-accent-3/14 blur-[80px] animate-float sm:h-[22rem] sm:w-[22rem] sm:blur-[100px]" />
 
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-5 sm:gap-12 md:grid md:grid-cols-[1.2fr_0.8fr] md:items-start md:gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 lg:px-8">
         {/* Text content */}
@@ -318,3 +318,4 @@ export function Hero() {
     </section>
   );
 }
+
