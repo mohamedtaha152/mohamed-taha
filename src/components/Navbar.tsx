@@ -92,8 +92,8 @@ export function Navbar() {
           href="#home"
           className="font-display text-lg font-bold tracking-tight sm:text-xl"
         >
-          <span className="text-gradient">Eng</span>
-          <span className="text-muted">.Mohamed Taha</span>
+          <span className="text-gradient">ENG</span>
+          <span className="text-muted">.MOHAMED TAHA</span>
         </a>
 
         {/* Desktop nav */}
