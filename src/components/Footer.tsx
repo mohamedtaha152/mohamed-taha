@@ -57,7 +57,7 @@ export function Footer() {
         <p className="flex items-center justify-center gap-1.5 text-center text-xs text-muted">
           {t.footer.madeWith}
           <HeartIcon className="h-3.5 w-3.5 text-accent-3" />
-          Next.js · Eng. Mohamed Taha
+          · Eng. Mohamed Taha
         </p>
       </div>
     </footer>
