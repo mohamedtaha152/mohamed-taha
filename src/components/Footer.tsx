@@ -13,8 +13,8 @@ export function Footer() {
     <footer className="relative border-t border-line bg-card/40">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-8 sm:flex-row sm:justify-between sm:gap-6 sm:py-10 lg:px-8">
         <a href="#home" className="font-display text-lg font-bold tracking-tight sm:text-xl">
-          <span className="text-gradient">Eng</span>
-          <span className="text-muted">.Mohamed Taha</span>
+          <span className="text-gradient">ENG</span>
+          <span className="text-muted">.MOHAMED TAHA</span>
         </a>
 
         <p className="flex items-center gap-1.5 text-center text-sm text-muted">
